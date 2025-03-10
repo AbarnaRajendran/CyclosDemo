@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -47,26 +48,55 @@ public class LoginSteps {
 	public void user_enterusername_and_password() {
 
 		driver.findElement(By.xpath("//*[@placeholder='User']")).sendKeys("demo");
-		System.out.print("demo");
+        System.out.println("Entered username: demo");
 		driver.findElement(By.xpath("//*[@placeholder='Password']")).sendKeys("1234");
-		System.out.print("1234");
+        System.out.println("Entered password: 1234");
 
-		driver.findElement(By.xpath("//*[text()='Submit']/parent::button")).click();
-		System.out.print("Submit");
+	
 	}
 
 	@And("Verify Dashboard page")
 	public void verify_Dashboard_page() {
 		driver.findElement(By.xpath("//div[text()='Dashboard']")).click();
-		System.out.print("True");
-	//	throw new io.cucumber.java.PendingException();
+        System.out.println("Verified Dashboard page visibility");
+	
 	}
 
-	@Then("close the website")
-	public void close_the_website() {
-		driver.quit();
-	//	throw new io.cucumber.java.PendingException();
+	@When("I logged into the Homepage")
+	public void i_logged_into_the_homepage() {
+		driver.findElement(By.xpath("//*[text()='Submit']/parent::button")).click();
+        System.out.println("Submit button clicked");
 	}
+
+	@When("I navigate to my {string} page")
+	public void i_navigate_to_my_page(String string) {
+		driver.findElement(By.xpath("//div[text()='Dashboard']")).click();
+        System.out.println("Navigated to Dashboard");
+		driver.findElement(By.xpath("//div[@class='personal-label']")).click();
+        System.out.println("Navigated to ");
+
+	}
+
+	@When("I get my personal information \\(e.g., name, contact info)")
+	public void i_get_my_personal_information_e_g_name_contact_info() {
+		WebElement businessName = driver.findElement(By.xpath("//div[@class='d-flex label-value-value'][normalize-space()='Demo user']"));
+        System.out.println("Business Name: " + businessName.getText());
+        WebElement LoginName = driver.findElement(By.xpath("//div[contains(text(),'demo')]"));
+        System.out.println("Login Name: " + LoginName.getText());
+	}
+
+	@Then("I logged out the page")
+	public void i_logged_out_the_page() {
+	    driver.findElement(By.xpath("//a[@id='logout-trigger']"));
+	}
+
+	@Then("Finally i close the browser")
+	public void finally_i_close_the_browser() {
+	   driver.quit();
+	}
+
+
+
 
 
 
