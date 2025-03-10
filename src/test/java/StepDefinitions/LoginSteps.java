@@ -96,6 +96,52 @@ public class LoginSteps {
 	}
 
 
+	@When("I click on {string} button")
+	public void i_click_on_button(String string) {
+	    driver.findElement(By.xpath("//a[@href='/banking/self/payment']")).click();
+	}
+
+	@Then("I get the available balance from the current account")
+	public void i_get_the_available_balance_from_the_current_account() {
+		WebElement AvailableBlc = driver.findElement(By.xpath("//label-value[2]//label[1]/following-sibling::*"));
+        System.out.println("Available balance: " + AvailableBlc.getText());
+	}
+
+	@Then("I select the user details")
+	public void i_select_the_user_details() {
+	   driver.findElement(By.xpath("//input[@placeholder='Type to search']")).click();
+	   driver.findElement(By.xpath("//input[@placeholder='Type to search']")).sendKeys("Ann's Café");
+	   
+	   driver.findElement(By.xpath("//*[@id='dropdown-menu-id_4']")).click();
+	   
+	   driver.findElement(By.xpath("//input[@id='id_3']")).sendKeys("100");
+	   
+
+	}
+
+	@Then("I make a payment in the {string} field")
+	public void i_make_a_payment_in_the_field(String string) {
+	    driver.findElement(By.xpath("//span[contains(text(),'Next')]/parent::*")).click();
+        System.out.println("Next button clicked");
+
+	}
+
+	@Then("I click the payment confirmation mode")
+	public void i_click_the_payment_confirmation_mode() {
+	    driver.findElement(By.xpath("//span[contains(text(),'Next')]/parent::*")).click();
+        System.out.println("Next button clicked");
+
+	 //   driver.findElement(By.xpath("//span[normalize-space()='Confirm']")).click();
+	       System.out.println("confirm button clicked");
+	}
+
+
+	@Then("I should see a confirmation message saying {string}")
+	public void i_should_see_a_confirmation_message_saying(String string) {
+	   driver.quit();
+	}
+
+
 
 
 
