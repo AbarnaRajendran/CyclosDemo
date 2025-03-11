@@ -1,4 +1,4 @@
-Feature: Test login Functionality and Make Payment
+Feature: Abarna_BBD_TC1_Test login Functionality and Make Payment
 
   Scenario: Check LOgin with valid credentials
     Given user is on login page

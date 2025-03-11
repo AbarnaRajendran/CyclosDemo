@@ -1,4 +1,4 @@
-Feature: Make a payment through Pay to System in Banking Field
+Feature: Abarna_BBD_TC3_Make a payment through Pay to System in Banking Field
 
 @test1
 Scenario: Make a payment through Pay to System in Banking Field

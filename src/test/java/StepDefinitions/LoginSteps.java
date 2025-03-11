@@ -180,6 +180,28 @@ public class LoginSteps {
 	public void i_select_the_in_the_banking_field(String string) {
 	    driver.findElement(By.xpath("(//*[contains(text(),\"CSV\")])")).click();
 	}
+	@Then("I select the {string} field")
+	public void i_select_the_field(String string) {
+	   driver.findElement(By.xpath("//div[contains(text(),'Dashboard')]")).click();
+	}
+
+	@Then("Finally select the {string} Tap")
+	public void finally_select_the_tap(String string) {
+		driver.findElement(By.xpath("//a[@id='menu_content']")).click();
+	   
+	}
+	@Then("I click to change theme into {string}")
+	public void i_click_to_change_theme_into(String string) {
+	   driver.findElement(By.xpath("//*[contains(text(),' Switch theme ')]/parent::*")).click();
+	}
+
+	@Then("I change the theme into {string}")
+	public void i_change_the_theme_into(String string) {
+		 driver.findElement(By.xpath("//*[contains(text(),' Switch theme ')]/parent::*")).click();
+	}
+
+
+
 
 
 
