@@ -34,7 +34,9 @@ public class LoginSteps {
 		System.out.print("homepage");
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		System.out.print(".........");
+		
+		
+		driver.navigate().refresh();
 
 		driver.findElement(By.xpath("//*[text()=' Login ']/parent::*")).click();
 
@@ -142,8 +144,38 @@ public class LoginSteps {
 	}
 
 
+	@When("I click on {string} button in the Banking")
+	public void i_click_on_button_in_the_banking(String string) {
+	   driver.findElement(By.xpath("(//div[normalize-space()='Payment to system'])[1]")).click();
+	   
+	}
 
+	@Then("I make a payment in the {string} field in the banking")
+	public void i_make_a_payment_in_the_field_in_the_banking(String string) {
+		  driver.findElement(By.xpath("//input[@id='id_1' or 3]")).sendKeys("100");
+	}
+	@Then("I select the {string} feild")
+	public void i_select_the_feild(String string) {
+	    driver.findElement(By.xpath("//a[@id='menu_banking']")).click();
+	}
+	@Then("I get the limit Balance from the member account")
+	public void i_get_the_limit_balance_from_the_member_account() {
+		WebElement LimitBlc = driver.findElement(By.xpath("//div[normalize-space()='Negative limit']/following-sibling::*"));
+        System.out.println("Available balance: " + LimitBlc.getText());
+	}
 
+	@Then("I download the details in the Banking Feild")
+	public void i_download_the_details_in_the_banking_feild() {
+		driver.findElement(By.xpath("//*[contains(text(),\"Download\")]")).click();
+	   
+	}
+	@Then("I get the available balance from the current account in the Member Account")
+	public void i_get_the_available_balance_from_the_current_account_in_the_member_account() {
+	//	driver.findElement(By.xpath("(//*[contains(text(),\"Available balance\")]/parent::div/following-sibling::div)[1]"));
+		
+		WebElement AvailableBlcs = driver.findElement(By.xpath("(//*[contains(text(),'Available balance')]/parent::div/following-sibling::div)[1]"));
+        System.out.println("Available balances: " + AvailableBlcs.getText());
+	}
 
 
 
