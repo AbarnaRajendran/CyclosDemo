@@ -176,6 +176,10 @@ public class LoginSteps {
 		WebElement AvailableBlcs = driver.findElement(By.xpath("(//*[contains(text(),'Available balance')]/parent::div/following-sibling::div)[1]"));
         System.out.println("Available balances: " + AvailableBlcs.getText());
 	}
+	@Then("I select the {string} in the banking field")
+	public void i_select_the_in_the_banking_field(String string) {
+	    driver.findElement(By.xpath("(//*[contains(text(),\"CSV\")])")).click();
+	}
 
 
 
