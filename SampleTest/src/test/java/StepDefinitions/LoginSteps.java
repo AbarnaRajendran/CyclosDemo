@@ -34,7 +34,9 @@ public class LoginSteps {
 		System.out.print("homepage");
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		System.out.print(".........");
+		
+		
+		driver.navigate().refresh();
 
 		driver.findElement(By.xpath("//*[text()=' Login ']/parent::*")).click();
 
@@ -95,6 +97,108 @@ public class LoginSteps {
 	   driver.quit();
 	}
 
+
+	@When("I click on {string} button")
+	public void i_click_on_button(String string) {
+	    driver.findElement(By.xpath("//a[@href='/banking/self/payment']")).click();
+	}
+
+	@Then("I get the available balance")
+	public void i_get_the_available_balance() {
+		WebElement AvailableBlc = driver.findElement(By.xpath("//label-value[2]//label[1]/following-sibling::*"));
+        System.out.println("Available balance: " + AvailableBlc.getText());
+	}
+
+	@Then("I select the user detail")
+	public void i_select_the_user_detail() {
+	   driver.findElement(By.xpath("//input[@placeholder='Type to search']")).click();
+	   driver.findElement(By.xpath("//input[@placeholder='Type to search']")).sendKeys("Ann's Café");
+	   
+	   driver.findElement(By.xpath("//*[@id='dropdown-menu-id_4']")).click();
+	   
+	   driver.findElement(By.xpath("//input[@id='id_3']")).sendKeys("100");
+	   
+
+	}
+
+	@Then("I make a payment in the {string} field")
+	public void i_make_a_payment_in_the_field(String string) {
+	    driver.findElement(By.xpath("//span[contains(text(),'Next')]/parent::*")).click();
+        System.out.println("Next button clicked");
+
+	}
+
+	@Then("I click the payment confirmation mode in the field")
+	public void i_click_the_payment_confirmation_mode_in_the_field() {
+	    driver.findElement(By.xpath("//span[contains(text(),'Next')]/parent::*")).click();
+        System.out.println("Next button clicked");
+
+	 //   driver.findElement(By.xpath("//span[normalize-space()='Confirm']")).click();
+	       System.out.println("confirm button clicked");
+	}
+
+
+	@Then("I should see a confirmation message saying {string}")
+	public void i_should_see_a_confirmation_message_saying(String string) {
+	   driver.quit();
+	}
+
+
+	@When("I click on {string} button in the Banking")
+	public void i_click_on_button_in_the_banking(String string) {
+	   driver.findElement(By.xpath("(//div[normalize-space()='Payment to system'])[1]")).click();
+	   
+	}
+
+	@Then("I make a payment in the {string} field in the banking")
+	public void i_make_a_payment_in_the_field_in_the_banking(String string) {
+		  driver.findElement(By.xpath("//input[@id='id_1' or 3]")).sendKeys("100");
+	}
+	@Then("I select the {string} feild")
+	public void i_select_the_feild(String string) {
+	    driver.findElement(By.xpath("//a[@id='menu_banking']")).click();
+	}
+	@Then("I get the limit Balance")
+	public void i_get_the_limit_balance() {
+		WebElement LimitBlc = driver.findElement(By.xpath("//div[normalize-space()='Negative limit']/following-sibling::*"));
+        System.out.println("Available balance: " + LimitBlc.getText());
+	}
+
+	@Then("I download the details")
+	public void i_download_the_details() {
+		driver.findElement(By.xpath("//*[contains(text(),\"Download\")]")).click();
+	   
+	}
+	@Then("I get the available balance from the current account")
+	public void i_get_the_available_balance_from_the_current_account() {
+	//	driver.findElement(By.xpath("(//*[contains(text(),\"Available balance\")]/parent::div/following-sibling::div)[1]"));
+		
+		WebElement AvailableBlcs = driver.findElement(By.xpath("(//*[contains(text(),'Available balance')]/parent::div/following-sibling::div)[1]"));
+        System.out.println("Available balances: " + AvailableBlcs.getText());
+	}
+	@Then("I select the {string} in the banking field")
+	public void i_select_the_in_the_banking_field(String string) {
+	    driver.findElement(By.xpath("(//*[contains(text(),\"CSV\")])")).click();
+	}
+	@Then("I select the {string} field")
+	public void i_select_the_field(String string) {
+	   driver.findElement(By.xpath("//div[contains(text(),'Dashboard')]")).click();
+	}
+
+	@Then("Finally select the {string} Tap")
+	public void finally_select_the_tap(String string) {
+		driver.findElement(By.xpath("//a[@id='menu_content']")).click();
+	   
+	}
+	@Then("I click to change theme into {string}")
+	public void i_click_to_change_theme_into(String string) {
+	   driver.findElement(By.xpath("//*[contains(text(),' Switch theme ')]/parent::*")).click();
+	}
+
+	@Then("I change the theme into {string}")
+	public void i_change_the_theme_into(String string) {
+		 driver.findElement(By.xpath("//*[contains(text(),' Switch theme ')]/parent::*")).click();
+	}
 
 
 
