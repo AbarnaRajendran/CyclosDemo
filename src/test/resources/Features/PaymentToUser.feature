@@ -1,4 +1,4 @@
-Feature: Abarna_BBD_TC2_Make a payment through Pay User in Banking Field
+Feature: Abarna_BBD_Make a payment through Pay User in Banking Field
  Scenario: Make a payment through Pay User in Banking Field
     Given user is on login page
     When user enterusername and password

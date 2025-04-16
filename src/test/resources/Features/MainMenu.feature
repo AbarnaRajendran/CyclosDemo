@@ -1,4 +1,4 @@
-Feature: Abarna_BBD_TC6_Check all the Main menu functionality
+Feature: Abarna_BBD_15APR_2025_Check all the Main menu functionality
  Scenario:  Check all the Main menu functionality
     Given user is on login page
     When user enterusername and password

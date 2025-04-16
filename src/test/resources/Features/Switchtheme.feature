@@ -1,4 +1,4 @@
-Feature: Abarna_BBD_TC7_Check whether able to change Theme
+Feature: Abarna_BBD_15APR_2025_Check whether able to change Theme
  Scenario:  Check whether able to change Theme
     Given user is on login page
     When user enterusername and password

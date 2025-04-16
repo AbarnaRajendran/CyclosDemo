@@ -1,4 +1,4 @@
-Feature: Abarna_BBD_TC4_Get the available balance in the Member Account 
+Feature: Abarna_BBD_Get the available balance in the Member Account 
  Scenario: Get the available balance in the Member Account
     Given user is on login page
     When user enterusername and password

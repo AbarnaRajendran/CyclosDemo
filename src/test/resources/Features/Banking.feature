@@ -1,4 +1,4 @@
-Feature: Abarna_BBD_TC5_Download the bank deatials in the Banking Feild
+Feature: Abarna_BBD_16APR_2025_Download the bank deatials in the Banking Feild
  Scenario: Download the bank deatials in the Banking Feild
     Given user is on login page
     When user enterusername and password

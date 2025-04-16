@@ -1,4 +1,4 @@
-Feature: Abarna_BBD_TC8_15APR_2025_Checking whether all banking module list
+Feature: Abarna_BBD_16APR_2025_Checking whether all banking module list
 
   Scenario: Banking Module in the Banking Field
     Given user is on login page
