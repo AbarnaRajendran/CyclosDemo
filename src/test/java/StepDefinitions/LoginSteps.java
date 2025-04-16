@@ -201,6 +201,42 @@ public class LoginSteps {
 	}
 
 
+	@When("I navigate to the settings page")
+	public void i_navigate_to_the_settings_page() {
+		   driver.findElement(By.xpath("//*[contains(text(),' Switch theme ')]/parent::*")).click();
+
+	}
+
+	@Then("I should see my current settings")
+	public void i_should_see_my_current_settings() {
+		 driver.findElement(By.xpath("//*[contains(text(),' Switch theme ')]/parent::*")).click();
+ 
+	}
+
+
+	@When("I am on the settings or profile page")
+	public void i_am_on_the_settings_or_profile_page() {
+	    // Write code here that turns the phrase above into concrete actions
+		WebElement businessName = driver.findElement(By.xpath("//div[@class='d-flex label-value-value'][normalize-space()='Demo user']"));
+        System.out.println("Business Name: " + businessName.getText());
+       	}
+
+	@When("I view my user details")
+	public void i_view_my_user_details() {
+		 WebElement LoginName = driver.findElement(By.xpath("//div[contains(text(),'demo')]"));
+	        System.out.println("Login Name: " + LoginName.getText());	
+	        
+	}
+
+	@Then("I should see my full name, email, and contact number")
+	public void i_should_see_my_full_name_email_and_contact_number() {
+	    // Write code here that turns the phrase above into concrete actions
+	}
+
+	@Then("the details should match the data stored in the system")
+	public void the_details_should_match_the_data_stored_in_the_system() {
+	    // Write code here that turns the phrase above into concrete actions
+	}
 
 
 
