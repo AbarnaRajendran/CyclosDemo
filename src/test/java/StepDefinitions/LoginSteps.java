@@ -45,6 +45,17 @@ public class LoginSteps {
 
 		//throw new io.cucumber.java.PendingException();
 	}
+	@Then("I select the Ticket Tap")
+	public void i_select_the_ticket_tap() {
+		driver.findElement(By.xpath("(//div[contains(text(),'Tickets')])[1]")).click() ;
+	}
+
+	@Then("check the status in the Ticket field")
+	public void check_the_status_in_the_ticket_field() {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.xpath("(//div[contains(text(),'Tickets')])[2]")).click() ;
+	}
+
 
 	@When("user enterusername and password")
 	public void user_enterusername_and_password() {
@@ -230,14 +241,45 @@ public class LoginSteps {
 
 	@Then("I should see my full name, email, and contact number")
 	public void i_should_see_my_full_name_email_and_contact_number() {
-	    // Write code here that turns the phrase above into concrete actions
+	    
 	}
 
 	@Then("the details should match the data stored in the system")
 	public void the_details_should_match_the_data_stored_in_the_system() {
-	    // Write code here that turns the phrase above into concrete actions
+		   driver.quit();
+
 	}
 
+
+
+	@When("the user navigates to {string}")
+	public void the_user_navigates_to(String string) {
+		WebElement AvailableBlcs = driver.findElement(By.xpath("(//*[contains(text(),'Available balance')]/parent::div/following-sibling::div)[1]"));
+        System.out.println("Available balances: " + AvailableBlcs.getText());
+	}
+
+	@When("enters recipient john_doe and amount {int}")
+	public void enters_recipient_john_doe_and_amount(Integer int1) {
+	    // Write code here that turns the phrase above into concrete actions
+        System.out.println("Available balances");
+	}
+
+	@When("confirms the transaction")
+	public void confirms_the_transaction() {
+		WebElement LimitBlc = driver.findElement(By.xpath("//div[normalize-space()='Negative limit']/following-sibling::*"));
+        System.out.println("Available balance: " + LimitBlc.getText());
+	}
+
+	@Then("the payment should be processed successfully")
+	public void the_payment_should_be_processed_successfully() {
+		System.out.println("the payment should be processed successfully");
+	}
+
+	@Then("a confirmation message should be shown")
+	public void a_confirmation_message_should_be_shown() {
+		   driver.quit();
+
+	}
 
 
 
