@@ -7,10 +7,11 @@ import io.cucumber.junit.Cucumber;
 
  @RunWith(Cucumber.class)
  @CucumberOptions(features="src/test/resources/Features",glue={"StepDefinitions"}, monochrome= true,
+		 
 		 plugin = {
 			      
 			        "json:target/cucumber-reports/cucumber.json",    // JSON report
-			        
+			    
 			    })
 public class TestRunner {
 }

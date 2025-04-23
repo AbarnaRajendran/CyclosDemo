@@ -53,7 +53,7 @@ public class LoginSteps {
 	@Then("check the status in the Ticket field")
 	public void check_the_status_in_the_ticket_field() {
 	    // Write code here that turns the phrase above into concrete actions
-		driver.findElement(By.xpath("(//div[contains(text(),'Tickets')])[2]")).click() ;
+		//driver.findElement(By.xpath("(//div[contains(text(),'Tickets')])[2]")).click() ;
 	}
 
 

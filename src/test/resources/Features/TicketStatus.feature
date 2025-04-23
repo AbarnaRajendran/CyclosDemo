@@ -6,3 +6,4 @@ Feature: Abarna_BBD_17APR_2025_checking Ticket Status
     Then I select the "Banking" feild 
     Then I select the Ticket Tap 
     And check the status in the Ticket field
+        And Finally i close the browser
